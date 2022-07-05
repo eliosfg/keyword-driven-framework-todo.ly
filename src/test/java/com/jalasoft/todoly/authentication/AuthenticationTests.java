@@ -2,7 +2,6 @@ package com.jalasoft.todoly.authentication;
 
 import api.APIManager;
 import framework.Environment;
-import groovyjarjarantlr4.runtime.Token;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;

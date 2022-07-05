@@ -13,11 +13,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ExcelReader {
+    private static final LoggerManager logger = LoggerManager.getInstance();
     private static final Environment environment = Environment.getInstance();
 
     public ArrayList<String> readExcelData(int colNo) {
+        logger.info("Reading Excel Data");
         File file = new File(System.getProperty("user.dir") + environment.getKeywordsSheetPath());
-        System.out.println(file.getAbsolutePath());
         ArrayList<String> arrayList = new ArrayList<>();
 
         try {
@@ -34,13 +35,9 @@ public class ExcelReader {
                     String data = cell.getStringCellValue();
                     arrayList.add(data);
                 }
-
-                if (!arrayList.isEmpty()) {
-                    System.out.println(arrayList.size());
-                    System.out.println("Your data ----> " + arrayList.get(0));
-                }
             }
         } catch (IOException e) {
+            logger.error("Error reading Excel Data");
             e.printStackTrace();
         }
         return arrayList;
