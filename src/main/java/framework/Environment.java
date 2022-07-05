@@ -152,5 +152,9 @@ public class Environment {
     public String getAuthenticationTokenEndPoint() {
         return getEnvironmentSetting("authenticationTokenEndPoint");
     }
+
+    public String getKeywordsSheetPath() {
+        return getEnvironmentSetting("keywordsSheetPath");
+    }
 }
 
